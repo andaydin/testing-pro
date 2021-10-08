@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -35,4 +36,202 @@
   to {
     transform: rotate(360deg);
   }
+}
+.d-block{
+  display:block;
+}
+
+.error{
+  color:red;
+  font-size:12px;
+}
+.error-border{
+  border:1px solid  #e91e63  !important;
+}
+.green-border{
+  border:1px solid #4caf50 !important;
+}
+.lock {
+  left: 10px;
+  position: absolute;
+  top:0;
+  bottom:0;
+  margin-top:auto;
+  margin-bottom:auto;
+  width: 12px;
+}
+.lock-white {
+  fill: #434343;
+}
+
+.pwd-container {
+  position: relative;
+}
+
+.pwd-container img {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  right: 8px;
+  top: 8px;
+}
+
+#action{
+  transition:.3s ease;
+}
+
+
+
+.full-screen {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  z-index: 9999;
+  border-radius: 50%;
+  animation: slidein 5s infinite;
+}
+
+@keyframes slidein {
+  from {
+    width: 0%;
+    height: 0%;
+  }
+
+  to {
+    width: 300%;
+    height: 300%;
+  }
+}
+
+/* CHECKBOX TOGGLE SWITCH */
+/* @apply rules for documentation, these do not work as inline style */
+
+.toggle-checkbox:checked {
+  right: 0;
+  border-color: #2464eb;
+}
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #2464eb;
+  left:0;
+
+}
+
+.button {
+	position: relative;
+	width: 100%;
+  margin:1em auto;
+	background-image: none;
+	color: white;
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+}
+.button::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 160px;
+	height: 40px;
+	background-color: black;
+	z-index: -1;
+	left: calc(50% - 80px);
+	top: 10px;
+	opacity: 0.3;
+	filter: blur(5px);
+	transition: all 0.2s ease-out;
+}
+.button:hover::after {
+	opacity: 0.5;
+	filter: blur(20px);
+	transform: translatey(10px) scalex(1.2);
+}
+
+.button:active::after {
+	opacity: 0.3;
+}
+.loading {
+	border-radius: 50px;
+	width: 50px;
+  height:50px;
+}
+.button.loading::after {
+	width: 40px;
+	left: 5px;
+	top: 12px;
+	border-radius: 100%;
+}
+.spinner {
+	display: block;
+	width: 34px;
+	height: 34px;
+	position: absolute;
+	top: 8px;
+	left: calc(50% - 17px);
+	background: transparent;
+	box-sizing: border-box;
+	border-top: 4px solid white;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	border-radius: 100%;
+	animation: spin 0.6s ease-out infinite;
+}
+@keyframes spin {
+	100% {transform: rotate(360deg)}
+}
+
+
+
+.container{
+  display:block;
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+
+/* Preview Project */
+.spec-container {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.upload-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+}
+.upload-btn span{
+  position:absolute;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+  color:#FFF;
+  font-size: 40px;
+  bottom:20px;
+  right:20px;
+  height:50px;
+  width:50px;
+  background:#434343;
+  cursor:pointer;
+}
+.upload-btn input{
+  display:none;
+}
+.previewImage{
+  height:300px;
+}
+.colors {
+  margin:2em auto;
+  display:flex;
+}
+.colors span{
+  display:inline-block;
+  border:5px solid #FFF;
+  margin:.5rem 1rem;
+  width:50px;
+  height:50px;
+  border-radius:50%;
 }
